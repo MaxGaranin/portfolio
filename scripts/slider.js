@@ -2,7 +2,7 @@
 var slideIndex = 0;
 showSlides();
 
-let dots = document.querySelectorAll(".slider--dots_item");
+let dots = document.querySelectorAll(".slider_dots--item");
 for (let i = 0; i < dots.length; i++) {
     dots[i].addEventListener('click', () => currentSlide(i));
 }
