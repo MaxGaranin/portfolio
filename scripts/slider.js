@@ -1,39 +1,56 @@
-/* Индекс слайда по умолчанию */
-var slideIndex = 1;
-showSlides(slideIndex);
+// Инициализация слайдера
+var slideIndex = 0;
+showSlides();
 
-/* Функция увеличивает индекс на 1, показывает следующй слайд*/
+let dots = document.querySelectorAll(".slider-dots_item");
+for (let i = 0; i < dots.length; i++) {
+    dots[i].addEventListener('click', () => currentSlide(i));
+}
+
+let next = document.querySelector(".next");
+next.addEventListener('click', plusSlide);
+
+let prev = document.querySelector(".prev");
+prev.addEventListener('click', minusSlide);
+
+// Функция увеличивает индекс на 1, показывает следующй слайд
 function plusSlide() {
-    showSlides(slideIndex += 1);
+    slideIndex += 1;
+    showSlides();
 }
 
-/* Функция уменьшяет индекс на 1, показывает предыдущий слайд*/
+// Функция уменьшает индекс на 1, показывает предыдущий слайд
 function minusSlide() {
-    showSlides(slideIndex -= 1);
+    slideIndex -= 1;
+    showSlides();
 }
 
-/* Устанавливает текущий слайд */
-function currentSlide(n) {
-    showSlides(slideIndex = n);
+// Устанавливает текущий слайд 
+function currentSlide(index) {
+    slideIndex = index;
+    showSlides();
 }
 
-/* Основная функция слайдера */
-function showSlides(n) {
-    var i;
-    var slides = document.getElementsByClassName("item");
-    var dots = document.getElementsByClassName("slider-dots_item");
-    if (n > slides.length) {
-        slideIndex = 1
+// Основная функция слайдера
+function showSlides() {
+    let slides = document.querySelectorAll(".item");
+    let dots = document.querySelectorAll(".slider-dots_item");
+
+    if (slideIndex > slides.length - 1) {
+        slideIndex = 0;
     }
-    if (n < 1) {
-        slideIndex = slides.length
+    else if (slideIndex < 0) {
+        slideIndex = slides.length - 1;
     }
-    for (i = 0; i < slides.length; i++) {
+
+    for (let i = 0; i < slides.length; i++) {
         slides[i].style.display = "none";
     }
-    for (i = 0; i < dots.length; i++) {
-        dots[i].className = dots[i].className.replace(" active", "");
+
+    for (let i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");        
     }
-    slides[slideIndex - 1].style.display = "block";
-    dots[slideIndex - 1].className += " active";
+
+    slides[slideIndex].style.display = "block";
+    dots[slideIndex].className += " active";
 }

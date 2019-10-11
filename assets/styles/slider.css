@@ -14,8 +14,8 @@
     object-fit: cover;
     width: 100%;
     height: 300px;
-    border: none !important;
-    box-shadow: none !important;
+    border: none;
+    box-shadow: none;
 }
 
 /* Кнопки вперед и назад */
