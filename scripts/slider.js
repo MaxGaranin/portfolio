@@ -13,6 +13,19 @@ next.addEventListener('click', plusSlide);
 let prev = document.querySelector(".slider--prev");
 prev.addEventListener('click', minusSlide);
 
+let slider = document.querySelector('.slider');
+let mc = new Hammer(slider);
+mc.on("panleft", function (ev) {
+    minusSlide();
+});
+mc.on("panright", function (ev) {
+    plusSlide();
+});
+
+//-------------------
+//     Функции
+//-------------------
+
 // Функция увеличивает индекс на 1, показывает следующй слайд
 function plusSlide() {
     slideIndex += 1;
@@ -48,7 +61,7 @@ function showSlides() {
     }
 
     for (let i = 0; i < dots.length; i++) {
-        dots[i].className = dots[i].className.replace(" active", "");        
+        dots[i].className = dots[i].className.replace(" active", "");
     }
 
     slides[slideIndex].style.display = "block";
