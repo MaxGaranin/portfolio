@@ -1,14 +1,12 @@
 /* Собственно сам слайдер */
 
 .slider {
-    max-width: 90%;
+    max-width: 100%;
     position: relative;
-    margin: auto;
     height: 300px;
-    margin-bottom: 15px;
 }
 
-/* Картинка мастабируется по отношению к родительскому элементу */
+/* Картинка масштабируется по отношению к родительскому элементу */
 
 .slider--item_img {
     object-fit: cover;
@@ -63,6 +61,7 @@
 /* Кружочки */
 
 .slider_dots {
+    margin-top: 10px;
     text-align: center;
 }
 
@@ -84,19 +83,8 @@
 /* Анимация слайдов */
 
 .slider--item {
-    -webkit-animation-name: fade;
-    -webkit-animation-duration: 1.5s;
     animation-name: fade;
     animation-duration: 1.5s;
-}
-
-@-webkit-keyframes fade {
-    from {
-        opacity: .4
-    }
-    to {
-        opacity: 1
-    }
 }
 
 @keyframes fade {

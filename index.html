@@ -5,55 +5,100 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="./assets/styles/style.css" rel="stylesheet">
     <link href="./assets/styles/slider.css" rel="stylesheet">
     <title>Portfolio</title>
 </head>
 
 <body>
-
-    <div class="edu">
-        <div class="edu--title">
-            <span>Education</span>
-            <a class="edu--title_expander" href="#">&#9650;</a>
+    <header class="personal_panel">
+        <div class="personal_panel--image"></div>
+        <div class="personal_panel--data">
+            <h2 class="personal_panel--data_name">
+                Maksim Garanin
+            </h2>
+            <h4 class="personal_panel--data_github">
+                <a href="https://github.com/maxgaranin" target="_blank">GitHub</a>
+            </h4>
+            <h4 class="personal_panel--data_social_nets">
+                <a href="#">LinkedIn</a>
+            </h4>
         </div>
-        <div class="edu--content">
-            <h3>Content</h3>
-            <h3>Content</h3>
-            <h3>Content</h3>
-            <h3>Content</h3>
-        </div>
-    </div>
+    </header>
 
-    <div class="slider">
-        <div class="slider--item">
-            <img class="slider--item_img" src="./assets/images/slide1.jpg" alt="Первый слайд">
-            <div class="slider--item_text">Заголовок слайда 1</div>
-        </div>
+    <main>
+        <section class="edu">
+            <div class="edu--title">
+                <h2 class="edu--title_name">Education</h2>
+                <a class="edu--title_expander" href="#">&#9650;</a>
+            </div>
+            <div class="edu--content">
+                <p class="edu--content-paragraph">
+                    <h4>School</h4>
+                    <h4>1985 - 1995</h4>
+                </p>
+                <p class="edu--content-paragraph">
+                    <h4>University</h4>
+                    <h4>1995 - 2001</h4>
+                </p>
+                <p class="edu--content-paragraph">
+                    <h4>RSSchool</h4>
+                    <h4>2019 - 2020</h4>
+                </p>
+            </div>
+        </section>
 
-        <div class="slider--item">
-            <img class="slider--item_img" src="./assets/images/slide2.jpg" alt="Второй слайд">
-            <div class="slider--item_text">Заголовок слайда 2</div>
-        </div>
+        <section class="projects">
+            <div class="projects--title">
+                <h2>Projects</h2>
+            </div>
 
-        <div class="slider--item">
-            <img class="slider--item_img" src="./assets/images/slide3.jpg" alt="Третий слайд">
-            <div class="slider--item_text">Заголовок слайда 3</div>
-        </div>
+            <div class="slider">
+                <div class="slider--item">
+                    <a href="./projects/theyalow.html">
+                        <img class="slider--item_img theyalow_project" src="./assets/images/slide1.jpg"
+                            alt="Первый слайд">
+                    </a>
+                    <div class="slider--item_text">Theyalow</div>
+                </div>
 
-        <a class="slider--prev">&#10094;</a>
-        <a class="slider--next">&#10095;</a>
-    </div>
+                <div class="slider--item">
+                    <a href="./projects/repair-design-project.html">
+                        <img class="slider--item_img repair_design_project" src="./assets/images/slide2.jpg"
+                            alt="Второй слайд">
+                    </a>
+                    <div class="slider--item_text">Repair Design Project</div>
+                </div>
 
-    <div class="slider_dots">
-        <span class="slider_dots--item"></span>
-        <span class="slider_dots--item"></span>
-        <span class="slider_dots--item"></span>
-    </div>
+                <div class="slider--item">
+                    <img class="slider--item_img" src="./assets/images/slide3.jpg" alt="Третий слайд">
+                    <div class="slider--item_text"></div>
+                </div>
 
-    <script src="./scripts/slider.js"></script>
-    <script src="./scripts/main.js"></script>
+                <a class="slider--prev">&#10094;</a>
+                <a class="slider--next">&#10095;</a>
+            </div>
+
+            <div class="slider_dots">
+                <span class="slider_dots--item"></span>
+                <span class="slider_dots--item"></span>
+                <span class="slider_dots--item"></span>
+            </div>
+        </section>
+
+        <section class="commands">
+            <div class="commands_panel">
+                <button class="commands_panel--btn btn_mobile">Mobile</button>
+                <button class="commands_panel--btn btn_desktop">Desktop</button>
+                <button class="commands_panel--btn btn_back">Back</button>
+            </div>
+        </section>
+    </main>
+
     <script src="./scripts/utils.js"></script>
     <script src="https://hammerjs.github.io/dist/hammer.js"></script>
+    <script src="./scripts/slider.js"></script>
+    <script src="./scripts/main.js"></script>
 </body>
 
 </html>

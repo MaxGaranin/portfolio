@@ -1,4 +1,6 @@
-// Инициализация слайдера
+//-------------------
+//   Слайдер
+//-------------------
 var slideIndex = 0;
 showSlides();
 
@@ -13,12 +15,13 @@ next.addEventListener('click', plusSlide);
 let prev = document.querySelector(".slider--prev");
 prev.addEventListener('click', minusSlide);
 
+// Свайпер
 let slider = document.querySelector('.slider');
 let mc = new Hammer(slider);
-mc.on("panleft", function (ev) {
+mc.on("swipeleft", function (ev) {
     minusSlide();
 });
-mc.on("panright", function (ev) {
+mc.on("swiperight", function (ev) {
     plusSlide();
 });
 
