@@ -1,0 +1,275 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    width: 1300px;
+}
+
+/* Header */
+
+header {
+    height: 566px;
+    background: url('./assets/images/header-background.png') no-repeat;
+    display: grid;
+    grid-template-columns: auto 4fr 3fr auto;
+    grid-template-rows: 1fr 2fr;
+    grid-template-areas: 
+        '.          logo  nav    .         ' 
+        'prev_slide video slogan next_slide';
+}
+
+.logo {
+    grid-area: logo;
+    justify-self: start;
+    align-self: center;
+    display: flex;
+    align-items: center; 
+    margin-left: 107px;
+    margin-top: -49px;    
+}
+
+.logo--image {
+    background: url('./assets/images/theyalow-logo.svg');
+}
+
+.logo--name {
+    font-family: 'Lucida Sans', serif;
+    font-weight: normal;
+    font-style: italic;
+    font-size: 41px;
+    text-transform: uppercase;
+    color: #ffffff;
+    margin-left: 3px;
+    margin-top: 12px;
+}
+
+.main_nav {
+    grid-area: nav;
+    justify-self: start;
+    align-self: center;
+    width: 454px;
+    height: 42px;
+    margin-top: -7px;
+    margin-left: -31px;    
+    background-color: #F5C506;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+}
+
+.main_nav--phone1 {
+    width: 454px;
+    height: 42px;
+    background-color: #F5C506;
+    opacity: 0.27;
+    position: absolute;
+    top: -4px;
+    left: -4px;
+}
+
+.main_nav--phone2 {
+    width: 454px;
+    height: 42px;
+    background-color: #F5C506;
+    opacity: 0.27;
+    position: absolute;
+    top: -8px;
+    left: -8px;
+}
+
+.main_nav--about {
+    flex-basis: auto;
+    width: 171px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-right: 1px solid rgb(0, 0, 0, 0.1);
+}
+
+.main_nav--about_image {
+    background: url('assets/images/nav-about.svg');
+    width: 22px;
+    height: 20px;  
+}
+
+.main_nav--about_text {
+    color: #9B7D08;
+    font-family: SegoeWP, sans-serif;
+    font-size: 17px;
+    text-transform: uppercase;
+    margin-left: 5px;
+}
+
+.main_nav--services {
+    flex-basis: auto;
+    width: 132px;
+    display: flex;
+    align-items: center;    
+    justify-content: center;
+    border-right: 1px solid rgb(0, 0, 0, 0.1);
+}
+
+.main_nav--services_image {
+    background: url('assets/images/nav-services.svg');
+    width: 20px;
+    height: 20px;  
+}
+
+.main_nav--services_text {
+    color: #9B7D08;
+    font-family: SegoeWP, sans-serif;
+    font-size: 17px;
+    text-transform: uppercase;
+    margin-left: 5px;
+}
+
+.main_nav--contact {
+    flex-basis: auto;
+    width: 145px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.main_nav--contact_image {
+    background: url('assets/images/nav-contact.svg');
+    width: 25px;
+    height: 19px;  
+}
+
+.main_nav--contact_text {
+    color: #9B7D08;
+    font-family: SegoeWP, sans-serif;
+    font-size: 17px;
+    text-transform: uppercase;
+    margin-left: 5px;
+}
+
+.video_container {
+    grid-area: video;
+    justify-self: end;
+    width: 549px;
+    height: 327px;
+    margin-top: -21px;
+    margin-right: 39px; 
+}
+
+.video_container--video {
+    width: 549px;
+    height: 327px;
+}
+
+.prev_slide--rect {
+    grid-area: prev_slide;
+    width: 33px;
+    height: 58px;
+    background-color: #F5C506;    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 111px;
+    margin-left: -2px;
+}
+
+.prev_slide--button {
+    width: 14px;
+    height: 20px;    
+    background: url('./assets/images/slider-button-arrow-prev.svg');
+}
+
+.prev_slide--image {
+    width: 100%;
+    height: 100%;    
+}
+
+.next_slide--rect {
+    grid-area: next_slide;
+    width: 33px;
+    height: 58px;
+    background-color: #F5C506;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 111px;
+    margin-left: 0;
+}
+
+.next_slide--button {
+    width: 14px;
+    height: 20px;    
+    background: url('./assets/images/slider-button-arrow-next.svg');
+}
+
+.slogan {
+    grid-area: slogan;
+    justify-self: center;
+    align-self: center;
+    font-family: Asap, AdobeInvisFont, sans-serif;
+    font-size: 63px;
+    text-align: center;
+    text-transform: uppercase;
+    margin-left: -134px;
+    margin-top: -118px;
+}
+
+.slogan--cool {
+    color: #F5C506;
+}
+
+.slogan--minimal {
+    color: #ffffff;
+    margin-top: -6px;
+    margin-left: 14px;     
+}
+
+/* Button panel */
+.buttons_section {
+    height: 212px;
+    background: url('./assets/images/buttons_section_background.png');
+    opacity: 0.4;
+}
+
+/* Section1 */
+.section1 {
+    height: 509px;
+    background: url('./assets/images/section1_background.png');
+}
+
+/* Section2 */
+.section2 {
+    height: 499px;
+    background: url('./assets/images/section2_background.png');
+}
+
+/* Footer */
+.footer {
+    border-top: 2px solid rgb(19, 17, 17);
+    height: 64px;
+    background: url('./assets/images/footer_background.png');
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.footer--logo_image {
+    height: 52px;
+    width: 52px;
+    background: url('./assets/images/theyalow-logo.svg');
+    background-size: 100%;
+    margin-left: 141px;
+    margin-top: -8px;
+}
+
+.footer--logo_name {
+    font-family: 'Lucida Sans', serif;
+    font-weight: normal;
+    font-style: italic;
+    font-size: 29px;
+    text-transform: uppercase;
+    color: #ffffff;
+    margin-left: 7px;
+    margin-top: -9px;
+}
