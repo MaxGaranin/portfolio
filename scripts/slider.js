@@ -1,72 +1,159 @@
-//-------------------
-//   Слайдер
-//-------------------
-var slideIndex = 0;
-showSlides();
+let items = document.querySelectorAll('.carousel .item');
+let currentItem = 0;
+let isEnabled = true;
 
-let dots = document.querySelectorAll(".slider_dots--item");
-for (let i = 0; i < dots.length; i++) {
-    dots[i].addEventListener('click', () => currentSlide(i));
+function changeCurrentItem(n) {
+  currentItem = (n + items.length) % items.length;
 }
 
-let next = document.querySelector(".slider--next");
-next.addEventListener('click', plusSlide);
+function hideItem(direction) {
+  isEnabled = false;
+  items[currentItem].classList.add(direction);
+  items[currentItem].addEventListener('animationend', function() {
+    this.classList.remove('active', direction);
+  });
+}
 
-let prev = document.querySelector(".slider--prev");
-prev.addEventListener('click', minusSlide);
+function showItem(direction) {
+  items[currentItem].classList.add('next', direction);
+  items[currentItem].addEventListener('animationend', function() {
+    this.classList.remove('next', direction);
+    this.classList.add('active');
+    isEnabled = true;
+  });
+}
 
-// Свайпер
-let slider = document.querySelector('.slider');
-let mc = new Hammer(slider);
-mc.on("swipeleft", function (ev) {
-    minusSlide();
+function nextItem(n) {
+  hideItem('to-left');
+  changeCurrentItem(n + 1);
+  showItem('from-right');
+}
+
+function previousItem(n) {
+  hideItem('to-right');
+  changeCurrentItem(n - 1);
+  showItem('from-left');
+}
+
+document.querySelector('.control.left').addEventListener('click', function() {
+  if (isEnabled) {
+    previousItem(currentItem);
+  }
 });
-mc.on("swiperight", function (ev) {
-    plusSlide();
+
+document.querySelector('.control.right').addEventListener('click', function() {
+  if (isEnabled) {
+    nextItem(currentItem);
+  }
 });
 
-//-------------------
-//     Функции
-//-------------------
+const swipedetect = el => {
+  let surface = el;
+  let startX = 0;
+  let startY = 0;
+  let distX = 0;
+  let distY = 0;
+  let startTime = 0;
+  let elapsedTime = 0;
 
-// Функция увеличивает индекс на 1, показывает следующй слайд
-function plusSlide() {
-    slideIndex += 1;
-    showSlides();
-}
+  let threshold = 150;
+  let restraint = 100;
+  let allowedTime = 300;
 
-// Функция уменьшает индекс на 1, показывает предыдущий слайд
-function minusSlide() {
-    slideIndex -= 1;
-    showSlides();
-}
+  surface.addEventListener(
+    'mousedown',
+    function(e) {
+      startX = e.pageX;
+      startY = e.pageY;
+      startTime = new Date().getTime();
+      e.preventDefault();
+    },
+    false
+  );
 
-// Устанавливает текущий слайд 
-function currentSlide(index) {
-    slideIndex = index;
-    showSlides();
-}
+  surface.addEventListener(
+    'mouseup',
+    function(e) {
+      distX = e.pageX - startX;
+      distY = e.pageY - startY;
+      elapsedTime = new Date().getTime() - startTime;
+      if (elapsedTime <= allowedTime) {
+        if (Math.abs(distX) >= threshold && Math.abs(distY) <= restraint) {
+          if (distX > 0) {
+            if (isEnabled) {
+              previousItem(currentItem);
+            }
+          } else {
+            if (isEnabled) {
+              nextItem(currentItem);
+            }
+          }
+        }
+      }
+      e.preventDefault();
+    },
+    false
+  );
 
-// Основная функция слайдера
-function showSlides() {
-    let slides = document.querySelectorAll(".slider--item");
-    let dots = document.querySelectorAll(".slider_dots--item");
+  surface.addEventListener(
+    'touchstart',
+    function(e) {
+      if (
+        e.target.classList.contains('arrow') ||
+        e.target.classList.contains('control')
+      ) {
+        if (e.target.classList.contains('left')) {
+          if (isEnabled) {
+            previousItem(currentItem);
+          }
+        } else {
+          if (isEnabled) {
+            nextItem(currentItem);
+          }
+        }
+      }
+      var touchobj = e.changedTouches[0];
+      startX = touchobj.pageX;
+      startY = touchobj.pageY;
+      startTime = new Date().getTime();
+      e.preventDefault();
+    },
+    false
+  );
 
-    if (slideIndex > slides.length - 1) {
-        slideIndex = 0;
-    }
-    else if (slideIndex < 0) {
-        slideIndex = slides.length - 1;
-    }
+  surface.addEventListener(
+    'touchmove',
+    function(e) {
+      e.preventDefault();
+    },
+    false
+  );
 
-    for (let i = 0; i < slides.length; i++) {
-        slides[i].style.display = "none";
-    }
+  surface.addEventListener(
+    'touchend',
+    function(e) {
+      var touchobj = e.changedTouches[0];
+      distX = touchobj.pageX - startX;
+      distY = touchobj.pageY - startY;
+      elapsedTime = new Date().getTime() - startTime;
+      if (elapsedTime <= allowedTime) {
+        if (Math.abs(distX) >= threshold && Math.abs(distY) <= restraint) {
+          if (distX > 0) {
+            if (isEnabled) {
+              previousItem(currentItem);
+            }
+          } else {
+            if (isEnabled) {
+              nextItem(currentItem);
+            }
+          }
+        }
+      }
+      e.preventDefault();
+    },
+    false
+  );
+};
 
-    for (let i = 0; i < dots.length; i++) {
-        dots[i].className = dots[i].className.replace(" active", "");
-    }
-
-    slides[slideIndex].style.display = "block";
-    dots[slideIndex].className += " active";
-}
+var el = document.querySelector('.carousel');
+swipedetect(el);

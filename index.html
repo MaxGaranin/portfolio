@@ -11,83 +11,83 @@
 </head>
 
 <body>
-    <main>
-        <div class="side_panel"></div>
+    <main class="main-panel">
+        <div class="personal">
+            <div class="personal__avatar"></div>
+            <div class="personal__data">
+                <h2 class="personal__data-item">
+                    Maksim Garanin
+                </h2>
+                <h4 class="personal__data-item">
+                    <a href="https://github.com/maxgaranin" target="_blank">GitHub</a>
+                </h4>
+                <h4 class="personal__data-item">
+                    <a href="https://www.linkedin.com">LinkedIn</a>
+                </h4>
+            </div>
+        </div>
+        <section class="edu">
+            <div class="edu__title">
+                <h2 class="edu__title-name">Education</h2>
+                <a id="expander" class="edu__title-expander" href="#">&#9650;</a>
+            </div>
+            <div class="edu__content">
+                <p class="edu__content-item">
+                    <h4>School</h4>
+                    <h4>1985 - 1995</h4>
+                </p>
+                <p class="edu__content-item">
+                    <h4>University</h4>
+                    <h4>1995 - 2001</h4>
+                </p>
+                <p class="edu__content-item">
+                    <h4>RSSchool</h4>
+                    <h4>2019 - 2020</h4>
+                </p>
+            </div>
+        </section>
 
-        <div class="main_panel">
-            <div class="personal_panel">
-                <div class="personal_panel--image"></div>
-                <div class="personal_panel--data">
-                    <h2 class="personal_panel--data_name">
-                        Maksim Garanin
-                    </h2>
-                    <h4 class="personal_panel--data_github">
-                        <a href="https://github.com/maxgaranin" target="_blank">GitHub</a>
-                    </h4>
-                    <h4 class="personal_panel--data_social_nets">
-                        <a href="https://www.linkedin.com">LinkedIn</a>
-                    </h4>
+        <section class="projects">
+            <h2>Projects</h2>
+             <div class="carousel">
+                <div class="items-container">
+                    <div class="item active">
+                        <div class="description slide-theyalow">
+                            <div class="slide-txt">
+                                <h2>THEYALOW</h2>
+                                <ul>
+                                    <li>Responsive</li>
+                                    <li>CSS Flex</li>
+                                </ul>
+                                <a href="theyalow.html">See the project</a>
+                            </div>                            
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="description slide-repair">
+                            <div class="slide-txt">
+                                <h2>Repair Design Project</h2>
+                                <ul>
+                                    <li>Responsive</li>
+                                    <li>SASS</li>
+                                    <li>Media Queries</li>
+                                </ul>
+                                <a href="repair.html">See the project</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="control left">
+                    <div class="arrow left">&#10094;</div>
+                </div>
+                <div class="control right">
+                    <div class="arrow right">&#10095;</div>
                 </div>
             </div>
-            <section class="edu">
-                <div class="edu--title">
-                    <h2 class="edu--title_name">Education</h2>
-                    <a class="edu--title_expander" href="#">&#9650;</a>
-                </div>
-                <div class="edu--content">
-                    <p class="edu--content-paragraph">
-                        <h4>School</h4>
-                        <h4>1985 - 1995</h4>
-                    </p>
-                    <p class="edu--content-paragraph">
-                        <h4>University</h4>
-                        <h4>1995 - 2001</h4>
-                    </p>
-                    <p class="edu--content-paragraph">
-                        <h4>RSSchool</h4>
-                        <h4>2019 - 2020</h4>
-                    </p>
-                </div>
-            </section>
-
-            <section class="projects">
-                <div class="projects--title">
-                    <h2>Projects</h2>
-                </div>
-
-                <div class="slider">
-                    <div class="slider--item">
-                        <a href="theyalow.html">
-                            <img class="slider--item_img theyalow_project" src="./assets/images/slide1.jpg"
-                                alt="Первый слайд">
-                        </a>
-                        <div class="slider--item_text">Theyalow</div>
-                    </div>
-
-                    <div class="slider--item">
-                        <a href="repair.html">
-                            <img class="slider--item_img repair_design_project" src="./assets/images/slide2.jpg"
-                                alt="Второй слайд">
-                        </a>
-                        <div class="slider--item_text">Repair Design Project</div>
-                    </div>
-
-                    <a class="slider--prev">&#10094;</a>
-                    <a class="slider--next">&#10095;</a>
-                </div>
-
-                <div class="slider_dots">
-                    <span class="slider_dots--item"></span>
-                    <span class="slider_dots--item"></span>
-                </div>
-            </section>
-        </div>
-        
-        <div class="side_panel"></div>
+        </section>
     </main>
 
     <script src="./scripts/utils.js"></script>
-    <script src="https://hammerjs.github.io/dist/hammer.js"></script>
     <script src="./scripts/slider.js"></script>
     <script src="./scripts/main.js"></script>
 </body>
