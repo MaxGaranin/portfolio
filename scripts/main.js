@@ -7,11 +7,13 @@ function onExpand(event) {
 
   const expander = event.currentTarget;
   const contentDiv = document.querySelector('.edu__content');
-  if (isVisible(contentDiv)) {
-    hideElem(contentDiv);
-    expander.innerHTML = downSymbol;
-  } else {
-    showElem(contentDiv);
-    expander.innerHTML = upSymbol;
-  }
+  expander.classList.toggle('edu__title-expander_expanded');
+  contentDiv.classList.toggle('edu__content_expanded');
+//   if (isVisible(contentDiv)) {
+//     //hideElem(contentDiv);
+//     expander.innerHTML = downSymbol;
+//   } else {
+//     //showElem(contentDiv);
+//     expander.innerHTML = upSymbol;
+//   }
 }
