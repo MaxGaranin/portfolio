@@ -1,3 +1,8 @@
+.frame {
+  display: block;
+  margin: 0 auto;
+}
+
 .desktop {
   width: 1300px;
   height: 1847px;

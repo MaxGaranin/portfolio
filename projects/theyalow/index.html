@@ -1,63 +1,163 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="utf-8">
-    <link href="style.css" rel="stylesheet">
-    <link href="fonts.css" rel="stylesheet">
-    <title>Theyalow</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="style.css">
+  <title>Document</title>
 </head>
-
 <body>
+  <div class="inner-wrapper inner-wrapper--top">
+    <div class="main__slider main__slider--left"></div>
+    <div class="main__slider main__slider--right"></div>
     <header class="header">
-        <div class="logo">
-            <img class="logo--image" src="./assets/images/theyalow-logo.svg" alt="logo">
-            <h1 class="logo--name">Theyalow</h1>
-        </div>
-        <nav class="main_nav">
-            <div class="main_nav--phone1"></div>
-            <div class="main_nav--phone2"></div>
-            <div class="main_nav--about">
-                <div class="main_nav--about_image"></div>
-                <div class="main_nav--about_text">About us</div>
-            </div>
-            <div class="main_nav--services">
-                <div class="main_nav--services_image"></div>
-                <div class="main_nav--services_text">Services</div>
-            </div>
-            <div class="main_nav--contact">
-                <div class="main_nav--contact_image"></div>
-                <div class="main_nav--contact_text">Contact</div>
-            </div>
-        </nav>
-        <div class="prev_slide--rect">
-            <div class="prev_slide--button"></div>
-        </div>
-        <div class="video_container">
-            <video class="video_container--video"
-                src="https://codecademy-content.s3.amazonaws.com/courses/Semantic+HTML/dog+video.mp4"
-                poster="./assets/images/banner.png" controls>
-            </video>
-        </div>
-        <div class="slogan">
-            <div class="slogan--cool">The cool</div>
-            <div class="slogan--minimal">The minimal</div>
-        </div>
-        <div class="next_slide--rect">
-            <div class="next_slide--button"></div>
-        </div>
+      <div class="header__logo">
+        <div class="header__img"></div>
+        <span class="header__name">theyalow</span>
+        <h1 class="header__title">TheyAlow video hosting!</h1>
+      </div>
+      <nav class="header__nav">
+        <ul class="header__navlist">
+          <li class="header__navbtn header__navbtn--about"><a class="header__link header__link--about" href="#">about us</a></li>
+          <li class="header__navbtn header__navbtn--services"><a class="header__link header__link--services" href="#">services</a></li>
+          <li class="header__navbtn"><a class="header__link header__link--contact" href="#">contact</a></li>
+        </ul>
+      </nav>
     </header>
-
-    <main>
-        <section class="buttons_section"></section>
-        <section class="section1"></section>
-        <section class="section2"></section>
+    <main class="main">
+      <div class="main__section main__section--video">
+        <video src="#" width="550px" height="327px"></video>
+        <div class="main__placeholder">
+          <div class="main__vcontrols">
+            <div class="main__playbtn">
+              <div class="main__playimg"></div>
+            </div>
+            <div class="main__bcontrols">
+              <div class="main__stopbtn">
+                <div class="main__stopimg"></div>
+              </div>
+              <div class="main__timeline"></div>
+              <div class="main__sound">
+                <img class="main__soundimg" src="./assets/images/soundbtn.svg" alt="sound">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="main__section main__section--title">
+        <h3 class="main__title">the cool</h3>
+        <h3 class="main__title main__title-bot">the minimal</h3>
+      </div>
     </main>
-
-    <footer class="footer">
-        <div class="footer--logo_image"></div>
-        <div class="footer--logo_name">Theyalow</div>
-    </footer>
+  </div>
+  <div class="advantages">
+    <div class="advantages__layer"></div>
+    <div class="advantages__layer"></div>
+    <div class="advantages__wrapper">
+      <div class="advantages__item">
+        <svg xmlns="http://www.w3.org/2000/svg" class="advantages__svg advantages__svg--design" viewBox="0 0 110 75" width="110" height="75">
+          <path d="M82.75 75L24.84 75C11.68 75 1 64.46 1 51.45C1 40.77 8.25 31.86 18.12 28.98C18.1 28.62 18.03 28.27 18.03 27.91C18.03 18.62 25.66 11.09 35.06 11.09C36.95 11.09 38.73 11.46 40.42 12.02C45.38 5.37 53.3 1 62.31 1C75.27 1 86.06 9.95 88.83 21.91C100.94 24.64 110 35.3 110 48.09C110 62.95 97.8 75 82.75 75ZM62.31 48.09L62.31 27.91L48.69 27.91L48.69 48.09L38.26 48.09L55.5 65.12L72.74 48.09L62.31 48.09Z" />
+        </svg>
+        <span class="advantages__title advantages__title--design">better design</span>
+      </div>
+      <div class="advantages__item">
+        <svg xmlns="http://www.w3.org/2000/svg" class="advantages__svg advantages__svg--customise" viewBox="0 0 92 96" width="92" height="96">
+          <path d="M75.64 56.57C70.95 86.68 39.71 88.76 22.24 87.51C21.08 92.69 20.63 96 20.63 96L12.04 96C12.04 96 23.11 54.03 48.89 31.73C53.69 27.43 59.02 23.71 65.01 21.02C37.19 31.22 17.79 65.82 9.15 84.22C5.23 78.36 -5.99 58.13 6.73 33.69C20.06 8.06 92 1 92 1C92 1 81.31 20.18 75.64 56.57Z" />
+        </svg>
+        <span class="advantages__title advantages__title--customise">customise</span>
+      </div>
+      <div class="advantages__item">
+        <svg xmlns="http://www.w3.org/2000/svg" class="advantages__svg advantages__svg--free" viewBox="0 0 82 84" width="82" height="84">
+          <path d="M60.23 51.81L60.23 75.95L49.69 62.28L27.83 84L1 1L82 30.18L60.23 51.81ZM8.59 8.88L54.66 57.34L60.06 51.97L8.59 8.88Z" />
+        </svg>
+        <span class="advantages__title advantages__title--free">its free</span>
+      </div>
+    </div>
+  </div>
+  <div class="presentation">
+    <div class="presentation__wrapper">
+      <h3 class="presentation__title">
+        lorem ipsum dolor sit amet
+      </h3>
+      <div class="presentation__line">
+        <div class="presentation__description">
+          <p class="presentation__text">Lorem ipsum dolor sit amet, consecte&shy;tur adipisicing elit, sed do eiusmod tempor inci&shy;didunt ut</p>
+          <div class="presentation__plus">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 12" width="12" height="12">
+              <path class="presentation__svg" d="M12 8L8 8L8 12L5 12L5 8L1 8L1 5L5 5L5 1L8 1L8 5L12 5L12 8Z" />
+            </svg>
+          </div>
+        </div>
+        <div class="presentation__preview">
+          <div class="presentation__playbtn">
+            <div class="presentation__playimg"></div>
+          </div>
+        </div>
+        <div class="presentation__share">
+          <span class="presentation__counter">22</span>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 164 134" width="164" height="134">
+            <style>
+              tspan { white-space:pre }
+              .twitter { fill-opacity: 0.902;fill: #bc7d00 } 
+            </style>
+            <g id="section_1">
+              <g id="scroll_2">
+                <path id="twitter" class="twitter" d="M164 16.31L148.72 31.63C148.72 31.63 148.72 30.24 148.72 34.18C148.72 36.98 148.27 39.65 147.62 42.25C147.26 63.31 140.56 91.25 113.06 113.3C58.96 156.67 1 118.4 1 118.4C46.84 118.4 46.84 103.09 46.84 103.09C36.66 103.09 16.28 82.67 16.28 82.67C21.37 87.77 31.56 82.67 31.56 82.67C6.09 67.36 6.09 52.04 6.09 52.04C11.19 57.15 21.37 52.04 21.37 52.04C-4.09 31.63 11.19 6.1 11.19 6.1C16.28 31.63 82.5 41.83 82.5 41.83L83.34 41.41C82.82 39.08 82.5 34.12 82.5 31.63C82.5 13.3 97.32 1 115.61 1C125.67 1 134.58 5.6 140.65 12.7L143.62 11.21L158.91 1L148.72 21.42L164 16.31Z" />
+              </g>
+            </g>
+          </svg>
+          <div class="presentation__plus presentation__plus--share">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 12" width="12" height="12">
+              <path class="presentation__svg" d="M12 8L8 8L8 12L5 12L5 8L1 8L1 5L5 5L5 1L8 1L8 5L12 5L12 8Z" />
+            </svg>
+          </div>
+          <div class="presentation__messages">
+            <div class="presentation__tweet">Daily Mobile UI Design Inspiration #1 
+                via @cssauthor</div>
+            <div class="presentation__tweet">Daily Mobile UI Design Inspiration #1 
+                via @cssauthor</div>
+            <div class="presentation__tweet">Daily Mobile UI Design Inspiration #1 
+                via @cssauthor</div>
+            <form action="#" class="presentation__form">
+              <input type="text" name="" id="" class="presentation__input"><input type="submit" value="Tweet" class="presentatio__button">
+            </form>
+          </div>
+        </div>
+      </div>
+      <div class="presentation__time">
+        <span class="presentation__date">25</span>
+        <span class="presentation__mounth">april</span>
+      </div>
+      <div class="presentation__scrollbar">
+        <div class="presentation__scroll"></div>
+      </div>
+    </div>
+  </div>
+  <footer class="page-footer">
+    <div class="footer__wrapper">
+      <h3 class="footer__title">Lorem ipsum dolor sit amet</h3>
+      <div class="footer__content">
+        <div class="footer__devices">
+          <div class="footer__mark"><span class="footer__text">its 100% free</span></div>
+          <div class="footer__desktop"></div>
+          <div class="footer__tablet"></div>
+          <div class="footer__mobile"></div>
+        </div>
+        <div class="footer__info">
+          <ul class="footer__descriptions">
+            <li class="footer__point">Sed ut perspiciatis unde omnis</li>
+            <li class="footer__point">Lorem ipsum dolor sit amet, con&shy;sectetur adipisicing</li>
+            <li class="footer__point">Sed ut perspiciatis unde omnis</li>
+            <li class="footer__point">Lorem ipsum dolor sit amet, con&shy;sectetur adipisicing</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <div class="footer__logo">
+    <div class="footer__img"></div>
+    <span class="footer__name">theyalow</span>
+  </div>
 </body>
-
 </html>
